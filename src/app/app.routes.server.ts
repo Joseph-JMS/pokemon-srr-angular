@@ -4,5 +4,10 @@ export const serverRoutes: ServerRoute[] = [
   {
     path: '**',
     renderMode: RenderMode.Prerender
+  },
+  //Adicion
+  {
+    path: 'pokemons/:id',
+    renderMode: RenderMode.Server,
   }
 ];
