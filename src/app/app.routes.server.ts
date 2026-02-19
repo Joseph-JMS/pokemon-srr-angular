@@ -8,6 +8,22 @@ export const serverRoutes: ServerRoute[] = [
   //Adicion
   {
     path: 'pokemons/:id',
-    renderMode: RenderMode.Server,
-  }
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams() {
+      return [
+        {id: 'aerodactyl'}
+      ]
+    },
+  },
+  {
+    path: 'pokemons/page/:page',
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams() {
+      return [
+        {page: '1'},
+        {page: '2'},
+        {page: '3'},
+      ]
+    }
+  },
 ];
